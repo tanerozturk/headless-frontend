@@ -23,6 +23,7 @@ export const GET_TOURS = gql`
         hasNextPage
       }
     }
+    toursCount
   }
 `;
 

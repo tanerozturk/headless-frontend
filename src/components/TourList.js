@@ -51,7 +51,9 @@ function TourList() {
   if (error) return <p>Error: {error.message}</p>;
   if (!data || !data.tours) return <p>No data available</p>;
 
-  const totalPages = Math.ceil((data.tours.nodes.length || 0) / itemsPerPage);
+  const total = data?.toursCount || 0;
+  const totalPages = Math.ceil(total / itemsPerPage);
+
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
