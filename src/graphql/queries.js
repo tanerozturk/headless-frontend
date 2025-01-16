@@ -46,3 +46,23 @@ export const GET_TOUR_BY_SLUG = gql`
     }
   }
 `;
+
+export const GET_PRIMARY_MENU = gql`
+  query GET_PRIMARY_MENU($id: ID!) {
+    menu(id: $id, idType: SLUG) {
+      id
+      name
+      slug
+      menuItems {
+        edges {
+          node {
+            id
+            label
+            url
+            path
+          }
+        }
+      }
+    }
+  }
+`;
